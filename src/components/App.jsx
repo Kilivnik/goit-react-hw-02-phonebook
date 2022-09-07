@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { ContactForm } from 'components/ContactForm';
 
 class App extends Component {
