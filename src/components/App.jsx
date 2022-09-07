@@ -1,46 +1,20 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
-};
+import { Component } from 'react';
+import { nanoid } from 'nanoid';
+import { ContactForm } from 'components/ContactForm';
 
-//Напиши приложение хранения контактов телефонной книги.
+class App extends Component {
+  addContact = data => {
+    console.log(data);
+  };
 
-// Шаг 1
-// Приложение должно состоять из формы и списка контактов. 
-// На текущем шаге реализуй добавление имени контакта и отображение списка контактов.
-// Приложение не должно сохранять контакты между разными сессиями(обновление страницы).
+  render() {
+    return (
+      <div>
+        <h1>Phonebook</h1>
+        <ContactForm onSubmit={this.addContact} />
+      </div>
+    );
+  }
+}
 
-// Используй эту разметку инпута с встроенной валидацией для имени контакта.
-
-// <input
-//   type="text"
-//   name="name"
-//   pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-//   title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-//   required
-// />
-
-
-//   Состояние хранящееся в родительском компоненте < App > обязательно должно быть следующего вида,
-//     добавлять новые свойства нельзя.
-
-// state = {
-//   contacts: [],
-//   name: ''
-// }
-
-// Каждый контакт должен быть объектом со свойствами name и id. 
-// Для генерации идентификаторов используй любой подходящий пакет, например nanoid.
-// После завершения этого шага, приложение должно выглядеть примерно так.
+export { App };
